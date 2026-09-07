@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración | Torneo HGR No. 33</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="admin-header"><div><b>HGR No. 33</b><h1>Panel de Administración</h1><p>Torneo de Fútbol • Donación de Órganos y Tejidos</p></div></header>
+<main class="container">
+<section id="adminLogin" class="card auth-card">
+<h2>Acceso de administrador</h2>
+<p class="muted">Solo usuarios autorizados.</p>
+<input id="adminEmail" type="email" placeholder="Correo electrónico">
+<input id="adminPassword" type="password" placeholder="Contraseña">
+<button id="adminLoginBtn" class="primary full-btn">Ingresar</button>
+<div id="adminLoginMsg" class="message"></div>
+</section>
+
+<section id="adminPanel" class="hidden">
+<div class="topbar"><div><strong>Panel de administración</strong><br><small id="adminAccount"></small></div><button id="adminLogout" class="secondary">Cerrar sesión</button></div>
+
+<div class="stats">
+<div><strong id="statTeams">0</strong><small>Equipos</small></div>
+<div><strong id="statPlayers">0</strong><small>Jugadores</small></div>
+<div><strong id="statPending">0</strong><small>Pendientes</small></div>
+<div><strong id="statValidated">0</strong><small>Validados</small></div>
+<div><strong id="statRejected">0</strong><small>Rechazados</small></div>
+</div>
+
+<section class="card">
+<div class="toolbar">
+<input id="search" placeholder="🔎 Buscar equipo, capitán o matrícula">
+<select id="filterCategory"><option value="">Todas las categorías</option><option>Varonil</option><option>Femenil</option></select>
+<select id="filterStatus"><option value="">Todos los estados</option><option>BORRADOR</option><option>PENDIENTE DE VALIDACIÓN</option><option>VALIDADO</option><option>RECHAZADO</option></select>
+<button id="refresh" class="secondary">↻ Actualizar</button>
+<button id="exportXlsx" class="primary">📊 Descargar Excel</button>
+</div>
+</section>
+
+<section id="teamList"></section>
+
+<section id="detail" class="card hidden">
+<div class="detail-head"><div><h2 id="detailTeam"></h2><p id="detailMeta"></p></div><button id="closeDetail" class="secondary">Cerrar</button></div>
+<div id="detailPlayers"></div>
+<div class="admin-actions">
+<button id="validateTeam" class="primary">✅ Validar equipo</button>
+<button id="rejectTeam" class="danger">✕ Rechazar equipo</button>
+<button id="printRoster" class="secondary">🖨️ Imprimir roster</button>
+</div>
+</section>
+</section>
+</main>
+<footer>Administración • Torneo HGR No. 33</footer>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
