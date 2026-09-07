@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Inscripción oficial al Torneo de Fútbol HGR No. 33, en conmemoración a la Donación de Órganos y Tejidos. 25 de septiembre, 16:00 horas, Cancha Soccer Centro, Monterrey.">
+<title>Inscripción | Torneo HGR No. 33</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="institution">HGR No. 33 • IMSS</div>
+    <div class="invite">DIRECCIÓN Y EL CUERPO DE GOBIERNO TE INVITAN</div>
+    <h1>TORNEO DE FÚTBOL</h1>
+    <div class="hgr">HGR No. 33</div>
+    <h2>EN CONMEMORACIÓN A LA DONACIÓN DE ÓRGANOS Y TEJIDOS</h2>
+    <div class="edition">DRA. MARINA M. ARIAS PECINA</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="event-grid">
+    <div><span>📅</span><b>25 DE SEPTIEMBRE</b><small>16:00 HORAS</small></div>
+    <div><span>📍</span><b>CANCHA SOCCER CENTRO</b><small>Av. Félix U. Gámez 235, Desarrollo Urbano Reforma, Monterrey, N.L.</small></div>
+    <div><span>⚽</span><b>VARONIL Y FEMENIL</b><small>CUPO LIMITADO</small></div>
+  </section>
+
+  <section id="authView" class="card auth-card">
+    <div class="tabs">
+      <button id="tabLogin" class="tab active">INICIAR SESIÓN</button>
+      <button id="tabRegister" class="tab">CREAR CUENTA</button>
+    </div>
+
+    <form id="loginForm">
+      <h2>Acceso del capitán</h2>
+      <p class="muted">Ingresa con el correo y contraseña de tu cuenta.</p>
+      <label>Correo electrónico<input id="loginEmail" type="email" autocomplete="email" required></label>
+      <label>Contraseña<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <button class="primary full-btn">Ingresar</button>
+      <button type="button" id="resetPassword" class="text-btn">¿Olvidaste tu contraseña?</button>
+      <div id="loginMsg" class="message"></div>
+    </form>
+
+    <form id="registerForm" class="hidden">
+      <h2>Crear cuenta de capitán</h2>
+      <p class="muted">La cuenta te permitirá guardar y actualizar tu inscripción.</p>
+      <label>Correo electrónico<input id="registerEmail" type="email" autocomplete="email" required></label>
+      <label>Contraseña<input id="registerPassword" type="password" minlength="8" autocomplete="new-password" required></label>
+      <label>Confirmar contraseña<input id="registerPassword2" type="password" minlength="8" autocomplete="new-password" required></label>
+      <button class="primary full-btn">Crear cuenta</button>
+      <div id="registerMsg" class="message"></div>
+    </form>
+  </section>
+
+  <section id="captainView" class="hidden">
+    <div class="topbar">
+      <div>👤 <strong id="accountEmail"></strong><br><small>Cuenta de capitán</small></div>
+      <button id="logout" class="secondary">Cerrar sesión</button>
+    </div>
+
+    <section class="card">
+      <div class="section-heading"><span>1</span><div><h2>Datos del equipo</h2><p>Completa la información del equipo y del capitán.</p></div></div>
+      <div class="grid2">
+        <label>Nombre del equipo*<input id="teamName" maxlength="70" required></label>
+        <label>Categoría*<select id="category" required><option value="">Selecciona</option><option>Varonil</option><option>Femenil</option></select></label>
+        <label>Nombre completo del capitán*<input id="captainName" maxlength="120" required></label>
+        <label>Matrícula / identificación IMSS*<input id="captainId" maxlength="40" required></label>
+        <label>Servicio / área de adscripción*<input id="captainArea" maxlength="120" required></label>
+        <label>Teléfono de contacto*<input id="captainPhone" maxlength="25" required></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading"><span>2</span><div><h2>Roster del equipo</h2><p>Todos los jugadores deberán estar registrados y contar con fotografía.</p></div></div>
+      <div class="notice">⚠️ El día del torneo los jugadores deberán presentar identificación con fotografía o gafete IMSS para la revisión del roster.</div>
+      <div id="players"></div>
+      <div class="actions-left"><button type="button" id="addPlayer" class="secondary">＋ Agregar jugador</button><span id="playerCounter" class="hint"></span></div>
+      <p class="hint">Fotografía: JPG o PNG, máximo 5 MB por jugador. El reglamento exige mínimo 10 y máximo 15 jugadores por equipo.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-heading"><span>3</span><div><h2>Aceptación y consentimiento</h2><p>Obligatorio para enviar la inscripción.</p></div></div>
+      <label class="check"><input type="checkbox" id="acceptRules"> Acepto el Reglamento del Torneo y me comprometo a comunicarlo a los jugadores y porra de mi equipo.</label>
+      <label class="check"><input type="checkbox" id="notWorking"> Confirmo que los jugadores registrados no estarán laborando durante la realización del torneo.</label>
+      <label class="check"><input type="checkbox" id="privacy"> Declaro haber leído el aviso de privacidad y autorizo el tratamiento de los datos y fotografías exclusivamente para la organización, identificación y control del torneo.</label>
+      <a href="reglamento.html" target="_blank" class="privacy-link">Consultar reglamento del torneo</a>
+      <a href="aviso-privacidad.html" target="_blank" class="privacy-link">Consultar aviso de privacidad</a>
+    </section>
+
+    <div class="actions">
+      <button id="saveDraft" class="secondary big">💾 Guardar borrador</button>
+      <button id="sendValidation" class="primary big">✅ Enviar a validación</button>
+    </div>
+    <div id="saveMsg" class="message"></div>
+
+    <section class="card status-card">
+      <div class="status-head"><h2>Estado de mi inscripción</h2><span id="statusPill" class="pill">BORRADOR</span></div>
+      <div id="folioBox" class="folio">Sin folio asignado</div>
+      <div id="adminNote" class="admin-note hidden"></div>
+    </section>
+  </section>
+</main>
+
+<footer>DONA ÓRGANOS, SALVA VIDAS • TORNEO HGR No. 33<br><a href="reglamento.html">Reglamento del torneo</a> · <a href="aviso-privacidad.html">Aviso de privacidad</a></footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
